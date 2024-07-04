@@ -11,7 +11,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import java.util.List;
 
 //@SpringBootTest
-public class SimpleTest {
+public class PostgreContainerTest {
 
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(
         "postgres:15_alpine"

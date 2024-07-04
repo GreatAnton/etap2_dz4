@@ -13,8 +13,6 @@ import java.util.Set;
 public class ConvertApplication extends SimpleLogger implements DataConverterable {
     @Override
     public List<LogLoadData> doConvert(List<LogLoadData> lldlist) {
-        doStartLog(lldlist);
-
         List<LogLoadData> lldListOut = new ArrayList<>();
         Set<String> set = new HashSet<>();
         set.add("web");
@@ -26,7 +24,6 @@ public class ConvertApplication extends SimpleLogger implements DataConverterabl
             }
             lldListOut.add(lld);
         }
-        doEndLog(lldListOut);
         return lldListOut;
     }
 }

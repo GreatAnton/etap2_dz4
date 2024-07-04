@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-@LogTransformation(nameFileLog = "LogConvertFIO")
+@LogTransformation(nameFileLog = "LogConvertFIO.txt")
 @Order(value = 2)
 public class ConvertFIO extends SimpleLogger implements DataConverterable {
 
@@ -19,7 +19,6 @@ public class ConvertFIO extends SimpleLogger implements DataConverterable {
     }
     @Override
     public List<LogLoadData> doConvert(List<LogLoadData> lldlist) {
-        doStartLog(lldlist);
         List<LogLoadData> lldListOut = new ArrayList<>();
         for (LogLoadData lld: lldlist) {
             lld.f = upper1(lld.f);
@@ -27,7 +26,6 @@ public class ConvertFIO extends SimpleLogger implements DataConverterable {
             lld.o = upper1(lld.o);
             lldListOut.add(lld);
         }
-        doEndLog(lldListOut);
         return lldListOut;
     }
 }
